@@ -1,11 +1,11 @@
 from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)
-
+SECRET_PASSWORD = os.getenv("SECRET_PASSWORD")
 @app.route('/verify-password', methods=['POST'])
 def verify_password():
     data = request.get_json()
-    if data.get('password') == "dogumgunu2025":
+    if data.get('password') == SECRET_PASSWORD:
         return jsonify({"success": True})
     return jsonify({"success": False})
 
