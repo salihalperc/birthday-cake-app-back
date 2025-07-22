@@ -1,5 +1,7 @@
 from flask import Flask, request, jsonify, render_template
 import os
+from flask_cors import CORS
+
 app = Flask(__name__)
 SECRET_PASSWORD = os.getenv("SECRET_PASSWORD")
 @app.route('/verify-password', methods=['POST'])
