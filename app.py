@@ -5,7 +5,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 SECRET_PASSWORD = os.getenv("SECRET_PASSWORD")
 
-CORS(app, origins=["https://salihalperc.github.io/birthday-cake-app"])
+CORS(app, origins=["https://salihalperc.github.io"])
 @app.route('/verify-password', methods=['POST'])
 def verify_password():
     data = request.get_json()
